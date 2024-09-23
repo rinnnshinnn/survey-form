@@ -4,14 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1 id="title">Survey Form</h1>
-    <p id="description"></p>
+    <p id="description">Thank you for contributing to our platform by taking this form</p>
+    
     <form action="" id="survey-form" method="post">
-        <label for="name">Name: <input type="text" name="name" id="name"></label>
-        <label for="email">Email: <input type="text" name="email" id="email"></label>
-        <label for="age">Age: <input type="number" name="age" id="age" min="10"></label>
+        
+        <!-- Personal Information Section -->
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <div class="form-group">
+                <label for="name" id="name-label">Name: </label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email" id="email-label">Email: </label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="number" id="number-label">Age: </label>
+                <input type="number" name="number" id="number" min="10" max="100" placeholder="Age">
+            </div>
+        </fieldset>
+
+        <!-- Feedback Section -->
+        <fieldset>
+            <legend>Feedback</legend>
+
+            <div class="form-group">
+                <label for="dropdown">Satisfied?</label>
+                <select name="dropdown" id="dropdown">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <p>Would you recommend us?</p>
+                <label for="recommend-yes">
+                    <input type="radio" name="recommend" id="recommend-yes" value="yes"> Yes
+                </label>
+                <label for="recommend-no">
+                    <input type="radio" name="recommend" id="recommend-no" value="no"> No
+                </label>
+            </div>
+
+            <div class="form-group">
+                <p>How did you find out about us?</p>
+                <label for="referrer-friend">
+                    <input type="checkbox" name="referrer" id="referrer-friend" value="friend"> Friend
+                </label>
+                <label for="referrer-internet">
+                    <input type="checkbox" name="referrer" id="referrer-internet" value="internet"> Internet
+                </label>
+            </div>
+        </fieldset>
+
+        <!-- Additional Comments Section -->
+        <fieldset>
+            <legend>Additional Comments</legend>
+
+            <div class="form-group">
+                <label for="comment">Any comments?</label>
+                <textarea name="comment" id="comment"></textarea>
+            </div>
+        </fieldset>
+
+        <button type="submit" id="submit">Submit</button>
     </form>
 </body>
 </html>
